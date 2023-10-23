@@ -15,17 +15,18 @@ actualizarTarjeta();
 
 function mostrarTabla(series:Serie[]):void{
     let Tbody: HTMLElement = document.createElement("tbody");
+    let id:number = 1;
   for (let serie of series) {
     console.log(serie);
     let row: HTMLElement = document.createElement("tr");
     row.innerHTML = `
         <td>${serie.id}</td>
-        <td>${serie.nombre}</td>
+        <td><button class="btn default" id="button-${id}">${serie.nombre}</button></td>
         <td>${serie.canal}</td>
         <td>${serie.temporadas}</td>
         `;
     Tbody.appendChild(row);
-    
+    id++;
   }
   contenidoTabla.appendChild(Tbody);
 }

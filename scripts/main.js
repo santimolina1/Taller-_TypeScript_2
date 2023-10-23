@@ -9,12 +9,14 @@ ImprimirPromedio();
 actualizarTarjeta();
 function mostrarTabla(series) {
     var Tbody = document.createElement("tbody");
+    var id = 1;
     for (var _i = 0, series_1 = series; _i < series_1.length; _i++) {
         var serie = series_1[_i];
         console.log(serie);
         var row = document.createElement("tr");
-        row.innerHTML = "\n        <td>".concat(serie.id, "</td>\n        <td>").concat(serie.nombre, "</td>\n        <td>").concat(serie.canal, "</td>\n        <td>").concat(serie.temporadas, "</td>\n        ");
+        row.innerHTML = "\n        <td>".concat(serie.id, "</td>\n        <td><button class=\"btn default\" id=\"button-").concat(id, "\">").concat(serie.nombre, "</button></td>\n        <td>").concat(serie.canal, "</td>\n        <td>").concat(serie.temporadas, "</td>\n        ");
         Tbody.appendChild(row);
+        id++;
     }
     contenidoTabla.appendChild(Tbody);
 }
